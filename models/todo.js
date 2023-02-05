@@ -8,11 +8,14 @@ const Todoschema=new mongoose.Schema({
         type:String,
         required: true,
           },
+          link:{
+            type:String,
+              },
     done:{
         type:String,
         required: true,
     }
 
-});
+}, {timestamps: true});
 
 module.exports=new mongoose.model("Todo",Todoschema);

@@ -3,9 +3,10 @@ const Todo_model=require('../models/todo')
 
 
 router.post('/add/todo',(req,res)=>{
-    const {todo}=req.body;
+    const {todo, link}=req.body;
+    console.log(todo, link)
     const {email_}=req.user.email;
-    const newTodo=new Todo_model({todo,email_:req.user.email,done:"0"})
+    const newTodo=new Todo_model({todo,email_:req.user.email,done:"0", link})
     if(todo==""){
         res.redirect('/')
     }
