@@ -51,27 +51,36 @@
             <input type="submit" value="Add" class="btn btn-md btn-primary mx-3">
         </form>
 
-        <ul class="list-group mt-5 ">
+        <ul class="list-group mt-5 " style="margin-bottom: 40px;">
             <% todo.forEach(todos=>{ %>
 
-                <li class="list-group-item hov libasic" 
-                <% if(todos.done==1) 
+                <li class="list-group-item hov libasic">
+                <!-- <% if(todos.done==1) 
                 { %>style=" background-color: #accec6 ; text-decoration: line-through;"
-                <% } %> >
-                    <%= todos.todo %>
-
-                    <span>
-                        
-                        <a href="<%= todos.link %>" class="btn btn-primary btn-small" style="margin-right:0px">View</a>
-                    </span>
-
-                    <span>
-
-                        <% if(todos.done==0) 
+                <% } %> > -->
+                <div style="display: flex; justify-content:space-between;width:100%;padding:20px 0px">
+                    <div style="display:flex;flex-wrap: wrap;flex-basis: 50%;"><%= todos.todo %></div>
+                
+                <div style="margin-right: 0%;">
+                    <a href="<%= todos.link %>" class="btn btn-primary btn-small" style="margin-right:0px">View</a>
+                    <% if(todos.done==0) 
                         { %> <a href="/update/todo/<%=todos._id%>" class="btn btn-success btn-small" style="margin-right:0px">Done</a>
                         <% } %>
                         
                         <a href="/delete/todo/<%=todos._id%>" class="btn btn-danger btn-small">Delete</a>
+
+                </div>
+            </div>
+                    
+
+                    <span>
+                        
+                        
+                    </span>
+
+                    <span>
+
+                        
                     </span>
                 </li>
 
